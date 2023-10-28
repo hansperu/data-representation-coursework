@@ -1,0 +1,26 @@
+<library>
+    <catalogue name="Technical Books">
+        <book>
+            <ISBN>978-0132350884</ISBN>
+            <title>Introduction to the Theory of Computation</title>
+            <author>Michael Sipser</author>
+        </book>
+        <book>
+            <ISBN>978-0596007126</ISBN>
+            <title>Head First Design Patterns</title>
+            <author>Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra</author>
+        </book>
+    </catalogue>
+    <catalogue name="Cookery Books">
+        <book>
+            <ISBN>978-0060559912</ISBN>
+            <title>The Joy of Cooking</title>
+            <author>Irma S. Rombauer</author>
+        </book>
+        <book>
+            <ISBN>978-0307464912</ISBN>
+            <title>Mastering the Art of French Cooking</title>
+            <author>Julia Child, Louisette Bertholle, Simone Beck</author>
+        </book>
+    </catalogue>
+</library>

@@ -1,0 +1,31 @@
+Last login: Sun Oct 29 13:59:57 on console
+➜  ~ rizo google.com
+zsh: command not found: rizo
+➜  ~ curl google.com
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+➜  ~ curl http://andrewbeatty1.pythonanywhere.com/books
+
+[{"Author":"andrew","Price":122,"Title":"javascript","id":180},{"Author":"Roy Keane","Price":155,"Title":"The Second Half","id":181},{"Author":"andrew","Price":10000000,"Title":"javascript","id":183},{"Author":"andrew","Price":10000000,"Title":"javascript","id":184},{"Author":"andrew","Price":10000000,"Title":"javascript","id":185},{"Author":"shane","Price":2,"Title":"test","id":193},{"Author":"mark","Price":22,"Title":"dog","id":195},{"Author":"JK Rowling","Price":999,"Title":"magic","id":197},{"Author":"Andrew","Price":12,"Title":"Javascript","id":198},{"Author":"Me","Price":3000,"Title":"My Book","id":280},{"Author":"Sean","Price":30,"Title":"Coding for Dummies","id":281},{"Author":"ooo","Price":20000,"Title":"HelloWorld!","id":285},{"Author":"Orla","Price":19000,"Title":"HelloWorld2!","id":286},{"Author":"OrlaC","Price":10,"Title":"LovePython!","id":290},{"Author":"asdfsd","Price":11111,"Title":"overviewasd","id":321},{"Author":"test test test","Price":123412,"Title":"testing title","id":326},{"Author":"test","Price":123,"Title":"test title","id":328},{"Author":"Jroche","Price":4,"Title":"API Consumption","id":330},{"Author":"TestDiff","Price":4,"Title":"testedDiff","id":331},{"Author":"testing2","Price":1000001,"Title":"test title2","id":333},{"Author":"testings","Price":1234567,"Title":"test title","id":334},{"Author":"The Two Brothers","Price":12,"Title":"Jonathan Wilson","id":342},{"Author":"Michel Foucault","Price":85,"Title":"Discipline and Punish","id":345},{"Author":"andrew","Price":12,"Title":"javascript","id":346},{"Author":"andrew","Price":12,"Title":"javascript","id":347},{"Author":"andrew","Price":12,"Title":"javascript","id":348},{"Author":"andrew","Price":12,"Title":"javascript","id":349},{"Author":"andrew","Price":1000000,"Title":"javascript","id":350},{"Author":"andrew","Price":12,"Title":"javascript","id":351},{"Author":"andrew","Price":12,"Title":"javascript","id":352},{"Author":"andrew","Price":12,"Title":"javascript","id":353},{"Author":"test","Price":123,"Title":"test title","id":354},{"Author":"test","Price":123,"Title":"test title","id":355},{"Author":"test","Price":123,"Title":"test title","id":356},{"Author":"test","Price":123,"Title":"test title","id":359},{"Author":"Status Code","Price":250,"Title":"Test Status","id":361},{"Author":"XXX","Price":3000,"Title":"XXX","id":362},{"Author":"test test test","Price":10000,"Title":"testing title","id":363}]
+➜  ~ curl http://andrewbeatty1.pythonanywhere.com/books/17
+
+{}
+➜  ~ curl -H "Content-Type:application/json" -X POST -d '{"Title":"Nuevo Libro","Author":"Autor Famoso","Price":20}' http://andrewbeatty1.pythonanywhere.com/books
+
+{"Author":"Autor Famoso","Price":20,"Title":"Nuevo Libro","id":364}
+➜  ~ curl --version
+curl 7.84.0 (x86_64-apple-darwin22.0) libcurl/7.84.0 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.11 nghttp2/1.47.0
+Release-Date: 2022-06-27
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtsp smb smbs smtp smtps telnet tftp 
+Features: alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL threadsafe UnixSockets
+➜  ~ curl http://andrewbeatty1.pythonanywhere.com/books > g00387884.txt
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2491  100  2491    0     0   8816      0 --:--:-- --:--:-- --:--:--  8992
+➜  ~ 

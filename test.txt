@@ -14,3 +14,5 @@ Paso 3
 Cuando comenzó a hervir el agua agregar la canela, el azúcar luego el api que diluimos con agua y agregar a la olla moviendo para que se mezcle bien todo
 Paso 4
 Mover constantemente mientras hierve por 20 minutos luego agregar el jugo de limón (si consigues la harina que viene preparado con jugo de limón, ya no deberas agregarle en este paso) dejar hervir por 5 minutos más y listo a disfrutar
+
+Texto adicional añadido por el script.

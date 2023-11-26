@@ -1,0 +1,5 @@
+TrainCode,TrainDate,TrainLatitude,TrainLongitude,TrainStatus,TrainMessage
+D935,25 Nov 2023,53.3531,-6.24591,N,D935\nDublin Connolly to Maynooth\nExpected Departure 23:27
+D225,25 Nov 2023,53.146,-7.18055,R,D225\n22:10 - Dublin Heuston to Portlaoise (2 mins late)\nDeparted Portarlington next stop Portlaoise
+D226,25 Nov 2023,53.3334,-6.40628,R,D226\n23:10 - Dublin Heuston to Kildare (0 mins late)\nArrived Clondalkin next stop Adamstown
+D825,25 Nov 2023,53.4509,-6.15649,R,D825\n22:45 - Dublin Connolly to Dundalk (12 mins late)\nDeparted Malahide next stop Donabate

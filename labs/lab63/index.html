@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Viewer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Available Books</h1>
+
+    <!-- Botón para cargar todos los libros -->
+    <button onclick="getAllBooks()">Load Books</button>
+
+    <!-- Tabla para mostrar los libros -->
+    <table id="booksTable" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        <!-- Los libros se cargarán aquí -->
+    </table>
+
+    <!-- Formulario para añadir o actualizar libros -->
+    <div>
+        <input type="text" id="bookId" placeholder="Book ID" hidden />
+        <input type="text" id="bookTitle" placeholder="Title" />
+        <input type="text" id="bookAuthor" placeholder="Author" />
+        <input type="number" id="bookPrice" placeholder="Price" />
+        <button onclick="createOrUpdateBook()">Submit</button>
+    </div>
+
+    <script>
+        // Función para obtener todos los libros
+        function getAllBooks() {
+            $.ajax({
+                url: "http://andrewbeatty1.pythonanywhere.com/books",
+                type: "GET",
+                success: function(books) {
+                    var table = $("#booksTable");
+                    table.find("tr:gt(0)").remove(); // Limpia la tabla, excepto el encabezado
+                    books.forEach(function(book) {
+                        table.append(`<tr>
+                            <td>${book.id}</td>
+                            <td>${book.title}</td>
+                            <td>${book.author}</td>
+                            <td>${book.price}</td>
+                            <td>
+                                <button onclick='loadBook(${book.id})'>Edit</button>
+                                <button onclick='deleteBook(${book.id})'>Delete</button>
+                            </td>
+                        </tr>`);
+                    });
+                }
+            });
+        }
+
+        // Función para cargar los datos de un libro en el formulario
+        function loadBook(bookId) {
+            $.ajax({
+                url: `http://andrewbeatty1.pythonanywhere.com/books/${bookId}`,
+                type: "GET",
+                success: function(book) {
+                    $("#bookId").val(book.id).show();
+                    $("#bookTitle").val(book.title);
+                    $("#bookAuthor").val(book.author);
+                    $("#bookPrice").val(book.price);
+                }
+            });
+        }
+
+        // Función para crear o actualizar un libro
+        function createOrUpdateBook() {
+            var bookId = $("#bookId").val();
+            var url = "http://andrewbeatty1.pythonanywhere.com/books";
+            var type = bookId ? "PUT" : "POST";
+            if (bookId) {
+                url += `/${bookId}`;
+            }
+
+            var bookData = {
+                title: $("#bookTitle").val(),
+                author: $("#bookAuthor").val(),
+                price: $("#bookPrice").val()
+            };
+
+            $.ajax({
+                url: url,
+                type: type,
+                contentType: "application/json",
+                data: JSON.stringify(bookData),
+                success: function(response) {
+                    getAllBooks(); // Recargar la lista de libros
+                    clearForm();
+                }
+            });
+        }
+
+        // Función para eliminar un libro
+        function deleteBook(bookId) {
+            $.ajax({
+                url: `http://andrewbeatty1.pythonanywhere.com/books/${bookId}`,
+                type: "DELETE",
+                success: function(response) {
+                    getAllBooks(); // Recargar la lista de libros
+                }
+            });
+        }
+
+        // Función para limpiar el formulario
+        function clearForm() {
+            $("#bookId").val('').hide();
+            $("#bookTitle").val('');
+            $("#bookAuthor").val('');
+            $("#bookPrice").val('');
+        }
+    </script>
+</body>
+</html>
